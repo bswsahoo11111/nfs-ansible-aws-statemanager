@@ -1,0 +1,11 @@
+---
+ - hosts: localhost
+   user: root
+   tasks:
+    - name: installing nfs
+      action: yum name=nfs* state=installed
+    - name: start nfs
+      service:
+       name: nfs-server.service
+       state: restarted
+       enabled: yes
